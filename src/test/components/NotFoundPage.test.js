@@ -7,3 +7,4 @@ test('should render Not Found Page', ()=>{
   const wrapper = shallow(<NotFoundPage/>)
   expect(wrapper).toMatchSnapshot();
 })
+
