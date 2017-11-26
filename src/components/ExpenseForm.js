@@ -14,7 +14,7 @@ export default class ExpenseForm extends React.Component {
       createAt: props.expense ? moment(props.expense.createAt):moment(),
       calendarFocused: false,
       error: ''
-    }
+    };
   }
   onDescriptionChange = (e) =>{
     const description = e.target.value;

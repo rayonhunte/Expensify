@@ -35,27 +35,8 @@ const mapStateToProps = (state, props)=>{
   };
 };
 
-const mapDispatchToProps = (dispatch) =>({
+const mapDispatchToProps = (dispatch, props) =>({
   editExpense: (id,expense) => dispatch(editExpense(id,expense)),
   removeExpense: (expense) =>dispatch(removeExpense(expense))
 });
 export default connect(mapStateToProps,mapDispatchToProps)(EditExpensePage);
-
-
-
-
-
-// return (
-//   <div>
-//     <ExpenseForm 
-//     expense = {props.expense}
-//     onSubmit={(expense)=>{
-//       props.dispatch(editExpense(props.expense.id, expense));
-//       props.history.push("/");
-//     }}/>
-//     <button onClick={(e)=>{
-//       props.dispatch(removeExpense({id: props.expense.id}));
-//       props.history.push("/");
-//     }}>Remove</button>
-//   </div>
-// );
