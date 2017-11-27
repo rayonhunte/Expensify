@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import moment from 'moment';
 import numeral from 'numeral';
+import {Link} from 'react-router-dom' ;
 
 
 const ExpensesListItem = ({dispatch, description ,id, amount, createAt})=>(
