@@ -57,3 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
+#ignore public files
+
+public/bundle.js
+public/bundle.js.map
+public/styles.css
+public/styles.css.map
+
+
