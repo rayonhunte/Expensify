@@ -1,15 +1,18 @@
 {
   "name": "expensify-app",
   "version": "1.0.0",
-  "description": "course aoo",
+  "description": "course app",
   "main": "index.js",
   "author": "Rayon Hunte",
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "test": "jest"
+    "test": "jest --config=jest.config.json",
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn build:prod"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
@@ -20,11 +23,18 @@
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.4",
+    "enzyme": "3.0.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "3.0.1",
+    "eslint": "3.x",
+    "express": "4.15.4",
+    "extract-text-webpack-plugin": "3.0.0",
     "jest": "20.0.4",
     "live-server": "^1.2.0",
     "moment": "2.18.1",
     "node-sass": "4.5.3",
     "normalize.css": "7.0.0",
+    "raf": "3.3.2",
     "react": "16.0.0",
     "react-addons-shallow-compare": "15.6.0",
     "react-dates": "12.7.0",
@@ -32,6 +42,7 @@
     "react-modal": "2.2.2",
     "react-redux": "5.0.5",
     "react-router-dom": "4.2.2",
+    "react-test-renderer": "16.0.0",
     "redux": "3.7.2",
     "sass-loader": "6.0.6",
     "style-loader": "0.18.2",
@@ -39,5 +50,8 @@
     "validator": "8.0.0",
     "webpack": "3.1.0",
     "webpack-dev-server": "2.5.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "7"
   }
 }
