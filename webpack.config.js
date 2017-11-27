@@ -43,6 +43,3 @@ module.exports = (env) =>{
   
   };
 };
-
-
-// ['style-loader','css-loader','sass-loader']
