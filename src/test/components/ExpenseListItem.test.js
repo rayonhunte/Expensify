@@ -9,10 +9,10 @@ const expense = {
   note: '',
   amount: 195,
   createAt: 0
-}
+};
 
 
 test('should render expense item',()=>{
-  const wrapper = shallow(<ExpensesListItem expense={expense}/>)
-  expect(wrapper).toMatchSnapshot()
-})
+  const wrapper = shallow(<ExpensesListItem expense={expense}/>);
+  expect(wrapper).toMatchSnapshot();
+});
