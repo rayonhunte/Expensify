@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Rayon Hunte",
   "license": "MIT",
+  "engines":{
+    "node": "8.9.0"
+  },
   "scripts": {
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
