@@ -5,7 +5,7 @@
   "main": "index.js",
   "author": "Rayon Hunte",
   "license": "MIT",
-  "engines":{
+  "engines": {
     "node": "8.9.0"
   },
   "scripts": {
@@ -28,6 +28,7 @@
     "eslint": "3.x",
     "express": "4.15.4",
     "extract-text-webpack-plugin": "3.0.0",
+    "firebase": "^4.6.2",
     "moment": "2.18.1",
     "node-sass": "4.5.3",
     "normalize.css": "7.0.0",
