@@ -60,3 +60,6 @@ typings/
 #ignore public files
 
 public/dist/
+
+.env.test
+.env.development
