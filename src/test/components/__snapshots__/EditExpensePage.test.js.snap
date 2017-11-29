@@ -8,7 +8,7 @@ exports[`should render EditExpense page correctly 1`] = `
         "amount": 195,
         "createAt": 0,
         "description": "Gum",
-        "id": "1",
+        "id": 1,
         "note": "",
       }
     }

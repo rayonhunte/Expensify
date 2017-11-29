@@ -18,8 +18,6 @@ promise.then((data)=>{
   console.log(error);
 });
 
-
-
-
-
 console.log('after');
+
+
