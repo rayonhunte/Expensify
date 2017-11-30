@@ -68,3 +68,16 @@ export const startSetExpenses = ()=>{
     });
   };
 };
+
+
+export const startEditExpense = (id, updates) =>{
+  return (dispatch)=>{
+    return database.ref(`expenses/${id}`).update({
+        ...updates
+    }).then(()=>{
+      dispatch(editExpense(id, updates));
+    }).catch((error)=>{
+      console.log(error);
+    });
+  };
+};

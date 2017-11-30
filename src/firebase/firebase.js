@@ -278,11 +278,3 @@ export {firebase, database as default};
 // }).catch((error)=>{
 //   console.log(error);
 // });
-
-
-// apiKey: "AIzaSyCXkwFc-XxZ1E9NRKWwgkl6jaEg6WC4juc",
-// authDomain: "react-expensify-a2ac3.firebaseapp.com",
-// databaseURL: "https://react-expensify-a2ac3.firebaseio.com",
-// projectId: "react-expensify-a2ac3",
-// storageBucket: "react-expensify-a2ac3.appspot.com",
-// messagingSenderId: "144443713393"
