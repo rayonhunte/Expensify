@@ -40,6 +40,16 @@ export const  setExpenses = (expenses) =>({
   expenses
 });
 
+export const startRemoveExpense = ({id})=>{
+  return (dispatch)=>{
+  return database.ref(`expenses/${id}`).remove().then(()=>{
+    dispatch(removeExpense({id:id}));
+  }).catch((error)=>{
+    console.log(error);
+  });
+  };
+};
+
 export const startSetExpenses = ()=>{
   const expenses = [];
   return (dispatch)=>{
