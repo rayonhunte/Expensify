@@ -10,8 +10,8 @@ test('should set up default filter values', ()=>{
     sortBy:'date',
     startDate: moment().startOf('month'),
     endDate: moment().endOf('month')
-  })
-})
+  });
+});
 
 test('should set sortBy amount',()=>{
   const currentState = {
@@ -19,10 +19,10 @@ test('should set sortBy amount',()=>{
     startDate: undefined,
     endDate:undefined,
     sortBy: 'date'
-  }
-  const state = filterReducer(currentState,{type:'SORT_BY_AMOUNT'})
-  expect(state.sortBy).toBe('amount')
-})
+  };
+  const state = filterReducer(currentState,{type:'SORT_BY_AMOUNT'});
+  expect(state.sortBy).toBe('amount');
+});
 
 
 test('should set sortBy date',()=>{
@@ -31,24 +31,24 @@ test('should set sortBy date',()=>{
     startDate: undefined,
     endDate:undefined,
     sortBy: 'amount'
-  }
-  const state = filterReducer(currentState,{type:'SORT_BY_DATE'})
-  expect(state.sortBy).toBe('date')  
-})
+  };
+  const state = filterReducer(currentState,{type:'SORT_BY_DATE'});
+  expect(state.sortBy).toBe('date');
+});
 
 
 test('should set startDate',()=>{
-  const state = filterReducer(undefined,{type:'SET_START_DATE', startDate:moment().startOf('month')})
-  expect(state.startDate).toEqual(moment().startOf('month'))  
-})
+  const state = filterReducer(undefined,{type:'SET_START_DATE', startDate:moment().startOf('month')});
+  expect(state.startDate).toEqual(moment().startOf('month'));  
+});
 
 
 test('should set  endDate',()=>{
-  const state = filterReducer(undefined,{type:'SET_END_DATE', endDate:moment().endOf('month')})
-  expect(state.endDate).toEqual(moment().endOf('month'))  
-})
+  const state = filterReducer(undefined,{type:'SET_END_DATE', endDate:moment().endOf('month')});
+  expect(state.endDate).toEqual(moment().endOf('month'));  
+});
 
 test('should set text filter',()=>{
-  const text = filterReducer(undefined, {type:'SET_TEXT',text:'cool'})
-  expect(text.text).toBe('cool')
-})
+  const text = filterReducer(undefined, {type:'SET_TEXT',text:'cool'});
+  expect(text.text).toBe('cool');
+});

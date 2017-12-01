@@ -5,9 +5,9 @@ import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
 import AppRouter, {history} from './routers/AppRouter';
 import {startSetExpenses} from './actions/expenses';
-import {setTextFilter} from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 import {firebase} from './firebase/firebase';
+import {login, logout} from './actions/auth'; 
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -36,6 +36,7 @@ firebase
   .auth()
   .onAuthStateChanged((user) => {
     if (user) {
+      store.dispatch(login(user.uid));
       store
         .dispatch(startSetExpenses())
         .then(() => {
@@ -48,6 +49,7 @@ firebase
           console.log(error);
         });
     } else {
+      store.dispatch(logout());
       renderApp();
       history.push('/');
     }
