@@ -13,25 +13,26 @@ export default class ExpenseForm extends React.Component {
       amount: props.expense ? (props.expense.amount / 100).toString():'',
       createAt: props.expense ? moment(props.expense.createAt):moment(),
       calendarFocused: false,
-      error: ''
+      error: '',
+      whichPage: props.whichPage
     };
   }
   onDescriptionChange = (e) =>{
     const description = e.target.value;
     this.setState(()=>({
       description
-    }))
+    }));
   };
   OnNoteChange = (e) =>{
     const note = e.target.value;
     this.setState(()=>({
       note
-    }))
+    }));
   }
   onAmountChange = (e) =>{
     const amount = e.target.value;
     if(!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)){
-      this.setState(()=>({amount}))
+      this.setState(()=>({amount}));
     }
   }
 
@@ -39,7 +40,7 @@ export default class ExpenseForm extends React.Component {
     if(createdAt){
       this.setState(()=>({
         createdAt
-      }))
+      }));
     }
     
   }
@@ -47,7 +48,7 @@ export default class ExpenseForm extends React.Component {
   onFocusChange = ({focused})=>{
     this.setState(()=>({
       calendarFocused: focused
-    }))
+    }));
   }  
 
   onSubmit =(e)=>{
@@ -55,15 +56,15 @@ export default class ExpenseForm extends React.Component {
     if(!this.state.description || !this.state.amount){
         this.setState(()=>({
           error: "this was an error"
-        }))
+        }));
     }else{
-        this.setState(()=>({error:''}))
+        this.setState(()=>({error:''}));
         this.props.onSubmit({
           description: this.state.description,
           amount: parseFloat(this.state.amount, 10) * 100,
           createAt: this.state.createAt.valueOf(),
           note: this.state.note
-        })
+        });
     }
   }
 
@@ -97,10 +98,10 @@ export default class ExpenseForm extends React.Component {
           onChange={this.OnNoteChange}
           >      
           </textarea>
-          <button type="submit"> Add Expense</button>
+          <button type="submit">{this.state.whichPage}</button>
         </form>
       </div>
-    )
+    );
   }
 }
 

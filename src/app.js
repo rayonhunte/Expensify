@@ -3,33 +3,52 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
-import AppRouter from './routers/AppRouter';
+import AppRouter, {history} from './routers/AppRouter';
 import {startSetExpenses} from './actions/expenses';
 import {setTextFilter} from './actions/filters';
-import  getVisibleExpenses from './selectors/expenses';
-
+import getVisibleExpenses from './selectors/expenses';
+import {firebase} from './firebase/firebase';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 
-
-
 const store = configureStore();
 
 const jsx = (
   <Provider store={store}>
-    <AppRouter/> 
+    <AppRouter/>
   </Provider>
 );
 
-ReactDOM.render(<p>Loading Application</p>, document.getElementById('app'));
-
-store.dispatch(startSetExpenses()).then(()=>{
+let hasRendered = false;
+const renderApp = ()=>{
+if(!hasRendered){
   ReactDOM.render(jsx, document.getElementById('app'));
-}).catch((error)=>{
-  console.log(error);
-});
+  hasRendered = true;
+}
+};
 
+ReactDOM.render(
+  <p>Loading Application</p>, document.getElementById('app'));
 
-//ReactDOM.render(jsx, document.getElementById('app'));
+firebase
+  .auth()
+  .onAuthStateChanged((user) => {
+    if (user) {
+      store
+        .dispatch(startSetExpenses())
+        .then(() => {
+          renderApp();
+         if(history.location.pathname === '/'){
+            history.push('/dashboard');
+         }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      renderApp();
+      history.push('/');
+    }
+  });
