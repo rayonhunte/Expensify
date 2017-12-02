@@ -13,6 +13,7 @@ exports[`should render EditExpense page correctly 1`] = `
       }
     }
     onSubmit={[Function]}
+    whichPage="Edit"
   />
   <button
     onClick={[Function]}

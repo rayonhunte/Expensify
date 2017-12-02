@@ -106,9 +106,7 @@ exports[`should render error for invalid data 1`] = `
     />
     <button
       type="submit"
-    >
-       Add Expense
-    </button>
+    />
   </form>
 </div>
 `;
@@ -215,9 +213,7 @@ exports[`should render expense form 1`] = `
     />
     <button
       type="submit"
-    >
-       Add Expense
-    </button>
+    />
   </form>
 </div>
 `;
@@ -324,9 +320,7 @@ exports[`should render expense form with data 1`] = `
     />
     <button
       type="submit"
-    >
-       Add Expense
-    </button>
+    />
   </form>
 </div>
 `;
