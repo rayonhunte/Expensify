@@ -8,7 +8,7 @@ export const  ExpenseLoginPage = ({startLogin})=> {
           <div className="box-layout__box">
             <h1 className="layout__title">React Expensify</h1>
             <p>Get your expenses in Order !!!</p>
-            <button onClick={startLogin} className="button-layout">Login With Google</button>
+            <button onClick={startLogin} className="button">Login With Google</button>
           </div>
       </div>
     );
