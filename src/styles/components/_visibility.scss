@@ -1,0 +1,11 @@
+.show_for_mobile {
+    @media(min-width: $desktop-break){
+        display: none;
+    }
+}
+
+.show-for-desktop {
+    @media(max-width: $desktop-break){
+        display: none;
+    }
+}
