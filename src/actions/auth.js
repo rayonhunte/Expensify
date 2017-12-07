@@ -1,4 +1,5 @@
 import {firebase, googleAuthProvider, facebookAuthProvider} from '../firebase/firebase';
+import { toast } from 'react-toastify';
 import {connect} from 'react-redux';
 
 export const login = (uid) =>({
@@ -13,13 +14,17 @@ export const logout = () =>({
 
 export const startLogin = () =>{
   return () =>{
-    return firebase.auth().signInWithPopup(googleAuthProvider);
+    return firebase.auth().signInWithPopup(googleAuthProvider).catch((error)=>{
+      toast(error.message);
+    });
   };
 };
 
 export const startFaceLogin = () =>{
   return () =>{
-    return firebase.auth().signInWithPopup(facebookAuthProvider);
+    return firebase.auth().signInWithPopup(facebookAuthProvider).catch((error)=>{
+      toast(error.message);
+    });
   };
 };
 

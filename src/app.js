@@ -9,7 +9,6 @@ import getVisibleExpenses from './selectors/expenses';
 import {firebase} from './firebase/firebase';
 import {login, logout} from './actions/auth'; 
 import LoadingPage from './components/LoadingPage';
-
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
@@ -30,6 +29,7 @@ if(!hasRendered){
 }
 };
 
+
 ReactDOM.render(<LoadingPage/>, document.getElementById('app'));
 
 firebase
@@ -46,7 +46,7 @@ firebase
          }
         })
         .catch((error) => {
-          console.log(error);
+          toast("there was an error");
         });
     } else {
       store.dispatch(logout());

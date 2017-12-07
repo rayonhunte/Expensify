@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { startLogin, startFaceLogin } from '../actions/auth';
+import { ToastContainer } from 'react-toastify';
 
 export const  ExpenseLoginPage = ({startLogin, startFaceLogin})=> {
   return (
@@ -11,6 +12,16 @@ export const  ExpenseLoginPage = ({startLogin, startFaceLogin})=> {
             <button onClick={startLogin} className="button">Login With Google</button>
             <button onClick={startFaceLogin} className="button">Login With FaceBook</button>
           </div>
+          <ToastContainer 
+              position="top-center"
+              type="default"
+              autoClose={6000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              progressClassName="transparent-progress" 
+              closeOnClick
+              pauseOnHover
+             />
       </div>
     );
   
