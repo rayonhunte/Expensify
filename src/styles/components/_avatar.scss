@@ -6,4 +6,8 @@
 
 .profile ul{
     list-style: none;
+    > li {
+        border-color: pink;
+        border-width: 1px;
+    }
 }
