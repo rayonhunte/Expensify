@@ -7,7 +7,8 @@ import AppRouter, {history} from './routers/AppRouter';
 import {startSetExpenses} from './actions/expenses';
 import getVisibleExpenses from './selectors/expenses';
 import {firebase} from './firebase/firebase';
-import {login, logout} from './actions/auth'; 
+import {login, logout} from './actions/auth';
+import {startProfile} from './actions/profile'; 
 import LoadingPage from './components/LoadingPage';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -36,6 +37,7 @@ firebase
   .auth()
   .onAuthStateChanged((user) => {
     if (user) {
+      store.dispatch(startProfile(user.providerData));
       store.dispatch(login(user.uid));
       store
         .dispatch(startSetExpenses())
@@ -49,6 +51,7 @@ firebase
           toast("there was an error");
         });
     } else {
+      store.dispatch(startProfile([{}]));
       store.dispatch(logout());
       renderApp();
       history.push('/');
