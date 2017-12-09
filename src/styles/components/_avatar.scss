@@ -1,13 +1,18 @@
 .avatar {
-    border-width: 1px;
+    border-top: 10px;
+    border-width: 3px;
     border-color: white;
     border-radius: 20px;
+    border-style: solid;
 }
 
 .profile ul{
     list-style: none;
     > li {
-        border-color: pink;
-        border-width: 1px;
+        padding: 10px;
+        border-color: #1597C1;
+        border-width: 3px;
+        border-style: solid;
+        border-radius: 15px;
     }
 }

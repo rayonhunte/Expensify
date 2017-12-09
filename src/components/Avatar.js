@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const Avatar = ({profile})=>(
   <div>
     <Link to="/profile">
-      <img className="avatar" src={profile.photoURL} height="60" width="70"/>
+      <img className="avatar" src={profile.photoURL} height="60" width="70" border="5"/>
     </Link>
   </div>
 );
