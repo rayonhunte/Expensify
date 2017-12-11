@@ -2,10 +2,10 @@ import React from 'react';
 import {connect}  from 'react-redux';
 import {Link} from 'react-router-dom';
 
-const Avatar = ({profile})=>(
+const Avatar = ({profile, height, width})=>(
   <div>
     <Link to="/profile">
-      <img className="avatar" src={profile.photoURL} height="60" width="70" border="5"/>
+      <img className="avatar" src={profile.photoURL} height={height} width={width} border="5"/>
     </Link>
   </div>
 );
