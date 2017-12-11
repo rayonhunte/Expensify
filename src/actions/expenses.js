@@ -22,7 +22,6 @@ export const startRemoveExpense = ({id}) => {
         toast("Expense Removed !!!");
       })
       .catch((error) => {
-        console.log(error);
         toast(error.message);
       });
   };
@@ -53,7 +52,6 @@ export const startAddExpense = (expenseData = {}) => {
         }));
       })
       .catch((error) => {
-        console.log(error);
         toast(error.message);
       });
   };
@@ -76,7 +74,6 @@ export const startSetExpenses = () => {
         dispatch(setExpenses(expenses));
       })
       .catch((error) => {
-        console.log(error);
         toast(error.message);
       });
   };
@@ -95,7 +92,6 @@ export const startEditExpense = (id, updates) => {
         toast("Expense Updated !!!");
       })
       .catch((error) => {
-        console.log(error);
         toast(error.message);
       });
   };
